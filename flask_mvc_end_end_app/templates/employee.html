@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EmpInformation</title>
+</head>
+<body>
+
+    <center><h1>Employee Registration Page</h1></center> <br><br>
+
+
+    {{resp}} <br><br>
+    <form action="/save" method="post">
+        EMP ID : <input type="text" name="id"  > <br> <br>
+        EMP Name : <input type="text" name="name" > <br> <br>
+         EMP Contact : <input type="text" name="mobile" value=""> <br> <br>
+        EMP Gender : <input type="radio" name="gender" value="M"> Male
+        <input type="radio" name="gender" value="F"> Female
+        <br> <br>
+        EMP Role : <select name="roles" multiple>
+                        <option value="SE">Software Engineer</option>
+                        <option value="SSE">Senior Software Engineer</option>
+                        <option value="TL">Team Lead</option>
+                        <option value="MNG">Manager</option>
+                        <option value="PM">Project Manager</option>
+
+    </select> <br> <br>
+        EMP Address : <textarea rows="4" cols="50" name="address"></textarea> <br> <br>
+        EMP Skills :
+        <input type="checkbox" name="skills" value="PY">Python
+        <input type="checkbox" name="skills" value="DS">Data-Science
+        <input type="checkbox" name="skills" value="JD">Java
+        <input type="checkbox" name="skills" value="DB">Database
+        <input type="checkbox" name="skills" value="DO">Dev-Ops
+        <input type="checkbox" name="skills" value="SPs">Spring
+
+
+        <br> <br>
+        EMP Salary : <input type="text" name="salary"> <br> <br>
+        EMP Exp : <select name="exp">
+
+                    <option value="0">--select--</option>
+                        <option value="1">0-3 Years</option>
+                        <option value="2">3-6 Years</option>
+                        <option value="3">6-9 Years</option>
+                        <option value="4">9-12 Years</option>
+                        <option value="5">12-15 Years</option>
+                        <option value="6">15+ Years</option>
+    </select> <br><br>
+
+    <input type="submit">
+
+
+    </form>
+
+
+
+    <table border="1">
+            <thead>
+                <th>EMPID</th> <th>EmpName</th> <th>Emp Mobile</th>
+            </thead>
+
+            <tbody>
+
+                    {% for emp in emplist %}
+                        <tr>
+                        <td>{{emp.id}}</td>
+                         <td>{{emp.name}}</td>
+                        <td>{{emp.mobile}}</td>
+                    </tr>
+
+                    {% endfor %}
+            </tbody>
+
+    </table>
+
+
+</body>
+</html>
